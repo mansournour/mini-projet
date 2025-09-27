@@ -1,0 +1,26 @@
+<h1>Liste des auteurs</h1>
+{% if authors is defined and authors is not empty %}
+    <p><strong> Le nombre total des auteurs est : {{ authors | length }}</p>
+{% set nomberTotal = 0 %}
+{% for author in authors %}
+{%set nomberTotal = nomberTotal + author.nb_books %}
+<p> le nombre total des books est : {{nomberTotal}} pour {{author.username}}</p>
+
+{%endfor%}
+{% for author in authors %}
+  <p>
+            <a href="{{ path('authorDetails', {'id': author.id}) }}">Details</a>
+        </p>
+<p> ID :{{author.id}}</p>
+<p>Picture :</p>
+<img src ="{{asset(author.picture)}}" width="80">
+<p> Username : {{author.username | upper }}  </p>
+<p> Email :{{author.email}}</p>
+<p> Nember of books :{{author.nb_books}}</p>
+
+{%endfor%}
+{% else %}
+<p>There is no Data   </p>
+
+{% endif %}
+
