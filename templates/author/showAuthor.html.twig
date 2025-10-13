@@ -1,4 +1,17 @@
-<h1>Auteur : {{ author.username }}</h1>
-<img src="{{ author.picture }}" alt="{{ author.username }}">
-<p>Email : {{ author.email }}</p>
-<p>Nombre de livres : {{ author.nb_books }}</p>
+<h1>Détails de l'auteur</h1>
+
+{% if author is not null %}
+    <p>ID : {{ author.id }}</p>
+    <p>Nom : {{ author.username }}</p>
+    <p>Email : {{ author.email }}</p>
+
+    <p>
+        <a href="{{ path('update_author', {'id': author.id}) }}">Mettre à jour</a>
+    </p>
+
+    <p>
+        <a href="{{ path('get_author') }}">Retour à la liste</a>
+    </p>
+{% else %}
+    <p>Auteur introuvable.</p>
+{% endif %}
