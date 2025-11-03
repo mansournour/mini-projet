@@ -30,7 +30,5 @@ Ce mini-projet a pour but d’appliquer les notions de base du développement we
 | 🧱 **IDE utilisé** | VS Code / PhpStorm |
 | 🔄 **Gestionnaire de dépendances** | Composer 2.x |
 
----
 
-## 🗂️ Structure du projet
 
